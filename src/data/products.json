@@ -1,0 +1,322 @@
+[
+  {
+    "id": "p01",
+    "name": "Vaso Aurora",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 12900,
+    "image": "/images/p01.svg",
+    "description": "Vaso Aurora: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p02",
+    "name": "Luminária Aurora",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 24900,
+    "image": "/images/p02.svg",
+    "description": "Luminária Aurora: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p03",
+    "name": "Poltrona Aurora",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 89900,
+    "image": "/images/p03.svg",
+    "description": "Poltrona Aurora: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p04",
+    "name": "Mesa lateral Aurora",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 34900,
+    "image": "/images/p04.svg",
+    "description": "Mesa lateral Aurora: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p05",
+    "name": "Vaso Brisa",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 13900,
+    "image": "/images/p05.svg",
+    "description": "Vaso Brisa: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p06",
+    "name": "Luminária Brisa",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 25900,
+    "image": "/images/p06.svg",
+    "description": "Luminária Brisa: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p07",
+    "name": "Poltrona Brisa",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 90900,
+    "image": "/images/p07.svg",
+    "description": "Poltrona Brisa: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p08",
+    "name": "Mesa lateral Brisa",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 35900,
+    "image": "/images/p08.svg",
+    "description": "Mesa lateral Brisa: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p09",
+    "name": "Vaso Terra",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 14900,
+    "image": "/images/p09.svg",
+    "description": "Vaso Terra: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p10",
+    "name": "Luminária Terra",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 26900,
+    "image": "/images/p10.svg",
+    "description": "Luminária Terra: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p11",
+    "name": "Poltrona Terra",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 91900,
+    "image": "/images/p11.svg",
+    "description": "Poltrona Terra: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p12",
+    "name": "Mesa lateral Terra",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 36900,
+    "image": "/images/p12.svg",
+    "description": "Mesa lateral Terra: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p13",
+    "name": "Vaso Horizonte",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 15900,
+    "image": "/images/p13.svg",
+    "description": "Vaso Horizonte: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p14",
+    "name": "Luminária Horizonte",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 27900,
+    "image": "/images/p14.svg",
+    "description": "Luminária Horizonte: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p15",
+    "name": "Poltrona Horizonte",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 92900,
+    "image": "/images/p15.svg",
+    "description": "Poltrona Horizonte: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p16",
+    "name": "Mesa lateral Horizonte",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 37900,
+    "image": "/images/p16.svg",
+    "description": "Mesa lateral Horizonte: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p17",
+    "name": "Vaso Sereno",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 16900,
+    "image": "/images/p17.svg",
+    "description": "Vaso Sereno: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p18",
+    "name": "Luminária Sereno",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 28900,
+    "image": "/images/p18.svg",
+    "description": "Luminária Sereno: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p19",
+    "name": "Poltrona Sereno",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 93900,
+    "image": "/images/p19.svg",
+    "description": "Poltrona Sereno: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p20",
+    "name": "Mesa lateral Sereno",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 38900,
+    "image": "/images/p20.svg",
+    "description": "Mesa lateral Sereno: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p21",
+    "name": "Vaso Raiz",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 17900,
+    "image": "/images/p21.svg",
+    "description": "Vaso Raiz: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p22",
+    "name": "Luminária Raiz",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 29900,
+    "image": "/images/p22.svg",
+    "description": "Luminária Raiz: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p23",
+    "name": "Poltrona Raiz",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 94900,
+    "image": "/images/p23.svg",
+    "description": "Poltrona Raiz: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p24",
+    "name": "Mesa lateral Raiz",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 39900,
+    "image": "/images/p24.svg",
+    "description": "Mesa lateral Raiz: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p25",
+    "name": "Vaso Nuvem",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 18900,
+    "image": "/images/p25.svg",
+    "description": "Vaso Nuvem: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p26",
+    "name": "Luminária Nuvem",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 30900,
+    "image": "/images/p26.svg",
+    "description": "Luminária Nuvem: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p27",
+    "name": "Poltrona Nuvem",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 95900,
+    "image": "/images/p27.svg",
+    "description": "Poltrona Nuvem: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p28",
+    "name": "Mesa lateral Nuvem",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 40900,
+    "image": "/images/p28.svg",
+    "description": "Mesa lateral Nuvem: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p29",
+    "name": "Vaso Duna",
+    "category": "Decoração",
+    "material": "Cerâmica",
+    "dimensions": "18 × 18 × 28 cm",
+    "price": 19900,
+    "image": "/images/p29.svg",
+    "description": "Vaso Duna: formas essenciais e acabamento em cerâmica para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p30",
+    "name": "Luminária Duna",
+    "category": "Iluminação",
+    "material": "Metal e madeira",
+    "dimensions": "25 × 25 × 42 cm",
+    "price": 31900,
+    "image": "/images/p30.svg",
+    "description": "Luminária Duna: formas essenciais e acabamento em metal e madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p31",
+    "name": "Poltrona Duna",
+    "category": "Móveis",
+    "material": "Madeira e tecido",
+    "dimensions": "72 × 80 × 85 cm",
+    "price": 96900,
+    "image": "/images/p31.svg",
+    "description": "Poltrona Duna: formas essenciais e acabamento em madeira e tecido para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  },
+  {
+    "id": "p32",
+    "name": "Mesa lateral Duna",
+    "category": "Móveis",
+    "material": "Madeira",
+    "dimensions": "45 × 45 × 50 cm",
+    "price": 41900,
+    "image": "/images/p32.svg",
+    "description": "Mesa lateral Duna: formas essenciais e acabamento em madeira para compor ambientes acolhedores. Produto fictício da coleção Forma."
+  }
+]
