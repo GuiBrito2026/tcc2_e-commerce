@@ -1,5 +1,19 @@
 # Forma — e-commerce experimental
 
+## Formatação do código
+
+O projeto usa Prettier 3.7.4 como dependência de desenvolvimento, com dois espaços, ponto e vírgula, aspas simples em JavaScript/TypeScript e linhas de até 100 caracteres quando possível. As regras são compartilhadas pelos cinco tratamentos e não adicionam código ao bundle da aplicação.
+
+```powershell
+npm install
+npm run format
+npm run format:check
+```
+
+`format` aplica a formatação; `format:check` verifica sem alterar arquivos. No VS Code, instale a extensão recomendada **Prettier - Code formatter**; a pasta `.vscode` configura a formatação ao salvar para os formatos suportados. `.editorconfig` padroniza indentação e finais de linha entre editores.
+
+Builds, dependências, relatórios, lockfile, arquivos ZIP e imagens geradas ficam fora da formatação. Os scripts Python não são formatados pelo Prettier; o EditorConfig define quatro espaços para eles. Esta configuração não instala hooks Git.
+
 Protótipo acadêmico React + TypeScript + Vite. Catálogo de 32 produtos, busca, filtros, ordenação, detalhes, comparação de até três produtos, carrinho e checkout fictício. Sem backend, APIs, fontes externas ou armazenamento de dados pessoais. O carrinho vive em memória e é reiniciado ao recarregar.
 
 ## Executar

@@ -1,1 +1,30 @@
-{"name":"tcc-e-commerce","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"vite --mode baseline","build":"tsc --noEmit && node scripts/build.mjs","preview":"vite preview --mode baseline --host 127.0.0.1","test":"node scripts/verify.mjs","test:e2e":"playwright test"},"dependencies":{"react":"19.1.0","react-dom":"19.1.0","react-router-dom":"7.6.2"},"devDependencies":{"@types/react":"19.1.6","@types/react-dom":"19.1.6","@types/node":"22.15.29","@vitejs/plugin-react":"4.5.1","typescript":"5.8.3","vite":"6.3.5","@playwright/test":"1.52.0"}}
+{
+  "name": "tcc-e-commerce",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode baseline",
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "preview": "vite preview --mode baseline --host 127.0.0.1",
+    "test": "node scripts/verify.mjs",
+    "test:e2e": "playwright test",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-router-dom": "7.6.2"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.6",
+    "@types/node": "22.15.29",
+    "@vitejs/plugin-react": "4.5.1",
+    "typescript": "5.8.3",
+    "vite": "6.3.5",
+    "@playwright/test": "1.52.0",
+    "prettier": "3.7.4"
+  }
+}
