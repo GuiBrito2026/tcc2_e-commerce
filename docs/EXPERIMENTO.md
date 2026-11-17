@@ -2,13 +2,13 @@
 
 ## Tratamentos
 
-| Build | Imagens do catálogo | Rotas | Comparador |
-|---|---|---|---|
-| baseline | eager | estáticas | import estático |
-| images | lazy nativo | estáticas | import estático |
-| routes | eager | React.lazy | import estático |
-| interaction | eager | estáticas | React.lazy ao abrir |
-| combined | lazy nativo | React.lazy | React.lazy ao abrir |
+| Build       | Imagens do catálogo | Rotas      | Comparador          |
+| ----------- | ------------------- | ---------- | ------------------- |
+| baseline    | eager               | estáticas  | import estático     |
+| images      | lazy nativo         | estáticas  | import estático     |
+| routes      | eager               | React.lazy | import estático     |
+| interaction | eager               | estáticas  | React.lazy ao abrir |
+| combined    | lazy nativo         | React.lazy | React.lazy ao abrir |
 
 O comparador só é montado ao clicar em todas as versões. O tratamento altera a transferência/avaliação do módulo, não antecipa sua renderização na baseline. O catálogo inicial também é uma rota lazy em routes/combined: existe custo adicional de descoberta que deve ser medido. O carregamento nativo é decidido pelo navegador; lazy não garante aguardar a entrada exata no viewport. Não há IntersectionObserver ou preload manual.
 
@@ -35,6 +35,7 @@ Perfis iniciais sugeridos, ainda não validados: controle sem throttling; rede l
 Faça piloto para fixar duração, estabilidade e número de repetições; ponto de partida: 20 por célula tratamento × perfil. Randomize e balanceie a ordem, guarde a semente e execute sequencialmente. Use um contexto novo por repetição e estado inicial vazio. Cache frio: contexto novo/cache limpo antes de navegar. Cache quente, se estudado, é outra condição com aquecimento padronizado; não misture amostras. Mantenha cache natural entre ações de um mesmo roteiro.
 
 Roteiros separados:
+
 1. Navegação direta ao catálogo; capturar métricas de carregamento inicial sem rolagem.
 2. Catálogo e rolagem até o último produto em posições/intervalos fixos; registrar requisições e bytes de imagens.
 3. Catálogo → produto p01 → adicionar → carrinho → checkout; medir cada transição.
