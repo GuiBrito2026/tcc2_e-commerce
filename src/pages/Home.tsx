@@ -1,3 +1,4 @@
+import ProductCarousel from '../components/ProductCarousel';
 import { Link } from 'react-router-dom';
 import { products } from '../data/catalog';
 import ProductCard from '../components/ProductCard';
@@ -9,29 +10,34 @@ export default function Home() {
         <div className="hero-copy">
           <span className="eyebrow">
             <span className="label-line" aria-hidden="true" />
-            ACESSÓRIOS PARA O SEU DIA A DIA
+            KNIGHT-TEC / SEU PRÓXIMO MOVIMENTO
           </span>
           <h1 id="home-title">
-            Seu espaço.
+            Um novo olhar.
             <br />
-            <em>Mais conectado.</em>
+            <em>Seu próximo</em>
+            <br />
+            movimento.
           </h1>
-          <p>Teclados, mouses, áudio e conexões para trabalhar, estudar e criar.</p>
-          <Link className="button hero-action" to="/produtos">
-            Explorar produtos <span aria-hidden="true">↗</span>
-          </Link>
-        </div>
-        <div className="hero-composition" aria-hidden="true">
-          <span className="composition-label">CONEXÕES ESSENCIAIS</span>
-          <div className="connection-mark">
-            <span>c</span>
-            <i />
+          <p>
+            O essencial para um setup com a sua identidade. Acessórios para trabalhar, estudar e
+            criar — do primeiro clique à próxima ideia.
+          </p>
+          <div className="hero-actions">
+            <Link className="button hero-action" to="/produtos">
+              Explorar produtos <span aria-hidden="true">↗</span>
+            </Link>
+            <a className="hero-secondary" href="#categorias">
+              Ver categorias <span aria-hidden="true">↓</span>
+            </a>
           </div>
-          <div className="composition-caption">
-            <span>Trabalho · Estudo · Criatividade</span>
-            <span>↗</span>
+          <div className="hero-catalog-note">
+            <span>30 produtos</span>
+            <span>5 categorias</span>
+            <span>Um setup seu.</span>
           </div>
         </div>
+        <ProductCarousel />
       </section>
       <section className="home-section category-section" aria-labelledby="categorias">
         <div className="section-heading">
