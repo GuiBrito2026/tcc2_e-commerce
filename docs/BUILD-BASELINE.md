@@ -4,10 +4,10 @@ Gerado por `node scripts/report-build.mjs` após o build. Tamanhos em bytes no d
 
 | Arquivo                     |  Bytes |
 | --------------------------- | -----: |
-| `index.html`                |    850 |
+| `index.html`                |    939 |
 | `.vite/manifest.json`       |    217 |
-| `assets/index-qfZbt1vF.js`  | 266112 |
-| `assets/style-k75r-GSa.css` |  14396 |
+| `assets/index-0NaEwPrv.js`  | 269495 |
+| `assets/style-gkJn4NMr.css` |  20275 |
 
 Além desses arquivos, há 90 SVGs em images/, documentados em image-manifest.json.
 

@@ -67,6 +67,34 @@ Os 15 cenários emitiram resultado `ok`. Após esses resultados, o processo fico
 
 ## Redesign da navegação por categorias
 
-A Home usa `CategoryNavigation.tsx`, importado estaticamente, com cinco cards derivados das categorias do catálogo. Cada card apresenta um ícone vetorial decorativo local, numeração, nome, quantidade real de produtos e indicação de acesso. O card inteiro é um link para o filtro existente `/produtos?categoria=...`; não há estado ou lógica de filtragem duplicada.
+A Home usa `CategoryNavigation.tsx`, importado estaticamente, com cinco cards derivados das categorias do catálogo. Cada card apresenta um ícone vetorial decorativo local, nome, quantidade real de produtos e indicação de acesso. O card inteiro é um link para o filtro existente `/produtos?categoria=...`; não há estado ou lógica de filtragem duplicada.
 
 Os cards usam os tokens compartilhados nos temas claro e escuro, bordas discretas e foco visível. São cinco colunas no desktop, três até 900 px e duas até 600 px, com o último card ocupando a linha inteira no celular. Ícones SVG inline não adicionam requisições, dependências ou alterações às 90 imagens dos produtos. A mesma seção integra os cinco tratamentos. Como sua altura mudou, gere novamente todos os builds e não misture medições do layout anterior com as novas.
+
+## Marca knight-tec
+
+A marca visível no header, no footer e no título da aba é knight-tec. O símbolo é um cavalo de xadrez vetorial original em `public/knight-tec.svg`, compartilhado pela marca, pelo hero e pelo favicon. O fundo claro do símbolo mantém contraste nos dois temas. Dimensões explícitas reservam espaço no layout. O arquivo local é carregado imediatamente em todos os tratamentos, sem dependências externas. O favicon substitui o ícone padrão da aba.
+
+As chaves internas `conecta.cart.v1` e `conecta.theme` são mantidas para preservar o carrinho e a preferência de tema existentes. Não são nomes exibidos ao visitante. Gere os cinco builds antes de novas medições; o novo símbolo acrescenta um recurso local comum a todos eles.
+
+## Primeira dobra editorial
+
+A abertura da Home associa o título “Seu próximo movimento” à marca knight-tec. O painel usa tabuleiro decorativo em CSS, coordenadas de xadrez e o SVG local já existente. O CTA principal leva ao catálogo; o secundário leva às categorias na própria página. Nenhum produto, imagem de catálogo ou tratamento de carregamento foi alterado. A composição é estática, responsiva e compartilhada pelos cinco builds e dois temas. A nova altura altera a posição dos destaques: não misturar medições de layouts diferentes.
+
+## Refinamento da logo
+
+A versão atual do cavalo foi criada com geração de imagem e exportada em PNG: `public/knight-tec.png` (384 × 384) para header, footer e hero, e `public/knight-tec-favicon.png` (64 × 64) para a aba. A silhueta inclui crina, recorte no pescoço e pedestal, com fundo claro para contraste em ambos os temas. O SVG anterior permanece como arquivo histórico sem referências na interface. Esta revisão substitui a especificação anterior da marca em SVG. Os mesmos arquivos e dimensões são usados nos cinco builds; nenhuma imagem de produto foi modificada.
+
+## Carrossel de abertura
+
+`ProductCarousel.tsx` substitui o painel decorativo à direita do hero. Mostra o primeiro produto de cada uma das cinco categorias, em ordem determinística, com imagem principal, nome, preço e link. Troca automaticamente a cada cinco segundos, sem botão de ativação ou pausa. Setas, indicadores, hover e foco não interrompem a rotação. Aba oculta suspende o timer, que retoma ao voltar à página. Com preferência de movimento reduzido, usa apenas troca manual.
+
+O componente é importado estaticamente na Home e mantém as cinco imagens montadas com carregamento imediato em todos os tratamentos, usando ProductImage com primary. Não há prefetch ou preload manual. Apenas o slide ativo fica visível e acessível. Dimensões intrínsecas 800 × 800 e proporção quadrada reservam espaço. Os arquivos do catálogo não são alterados.
+
+Este carrossel altera os recursos da primeira dobra e pode mudar o LCP; seu intervalo também pode interferir em medições longas. Fixe viewport, preferência de movimento e roteiro de interação em todas as execuções. Refaça os cinco builds e não misture resultados anteriores à introdução do carrossel.
+
+Os cards de categoria não exibem numeração. Ícones, nomes, contagens e ação Explorar são centralizados nos dois temas e em todos os breakpoints.
+
+## Cards de produto
+
+ProductCard usa uma superfície com borda e cantos arredondados, imagem quadrada preservada, selo derivado de featured/estoque, avaliação fixa, preço em destaque, disponibilidade da sessão e ação visual Ver detalhes. A ação integra o link existente, sem botão aninhado ou nova regra de negócio. O checkbox de comparação permanece fora do link, em área própria. O componente ProductImage e seus atributos de carregamento permanecem intactos. Os mesmos cards são usados na Home e no catálogo em todos os tratamentos e temas. As novas alturas devem ser congeladas antes da coleta.
