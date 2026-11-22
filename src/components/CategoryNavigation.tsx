@@ -21,7 +21,7 @@ const categories = [...new Set(products.map((product) => product.category))].map
 export default function CategoryNavigation() {
   return (
     <nav className="categories" aria-label="Categorias de produtos">
-      {categories.map(({ name, count }, index) => (
+      {categories.map(({ name, count }) => (
         <Link
           className="category-card"
           key={name}
@@ -31,7 +31,6 @@ export default function CategoryNavigation() {
             <svg className="category-icon" viewBox="0 0 48 48" fill="none" focusable="false">
               <path d={iconPaths[name]} />
             </svg>
-            <span className="category-index">0{index + 1}</span>
           </div>
           <div className="category-card-copy">
             <span className="category-name">{name}</span>
