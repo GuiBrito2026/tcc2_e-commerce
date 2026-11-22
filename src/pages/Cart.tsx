@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import { products, money } from '../data/catalog';
 import { useCart } from '../state/CartContext';
 export default function Cart() {
-  const { items, setQuantity, total } = useCart();
+  const { items, setQuantity, total, stock } = useCart();
   return (
-    <main>
+    <main id="conteudo" tabIndex={-1}>
       <span className="eyebrow">SUAS ESCOLHAS</span>
       <h1>Sacola</h1>
       {total === 0 ? (
         <p>
-          Sua sacola está vazia. <Link to="/">Explorar coleção</Link>
+          Sua sacola está vazia. <Link to="/produtos">Explorar coleção</Link>
         </p>
       ) : (
         <>
@@ -19,7 +19,7 @@ export default function Cart() {
               .map((p) => (
                 <article className="cart-row" key={p.id}>
                   <div>
-                    <Link to={`/produto/${p.id}`}>
+                    <Link to={`/produtos/${p.id}`}>
                       <h2>{p.name}</h2>
                     </Link>
                     <p>{money(p.price)} por unidade</p>
@@ -29,7 +29,7 @@ export default function Cart() {
                     <input
                       type="number"
                       min="1"
-                      max="99"
+                      max={stock[p.id]}
                       value={items[p.id]}
                       onChange={(e) => setQuantity(p.id, Number(e.target.value) || 1)}
                     />
@@ -42,6 +42,7 @@ export default function Cart() {
               ))}
           </div>
           <div className="summary">
+            <p>Subtotal: {money(total)}</p>
             <h2>Total: {money(total)}</h2>
             <p>Frete simulado gratuito.</p>
             <Link className="button" to="/checkout">
