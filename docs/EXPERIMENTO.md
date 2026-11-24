@@ -10,7 +10,7 @@
 | interaction | eager               | estáticas  | React.lazy ao abrir |
 | combined    | lazy nativo         | React.lazy | React.lazy ao abrir |
 
-O comparador e o visualizador só é montado ao clicar em todas as versões. O tratamento altera a transferência/avaliação do módulo, não antecipa sua renderização na baseline. A Home inicial também é uma rota lazy em routes/combined: existe custo adicional de descoberta que deve ser medido. O carregamento nativo é decidido pelo navegador; lazy não garante aguardar a entrada exata no viewport. Não há IntersectionObserver ou preload manual.
+O comparador e o visualizador só é montado ao clicar em todas as versões. O tratamento altera a transferência/avaliação do módulo, não antecipa sua renderização na baseline. A Home inicial também é uma rota lazy em routes/combined: existe custo adicional de descoberta que deve ser medido. O carregamento nativo é decidido pelo navegador; lazy não garante aguardar a entrada exata no viewport. No carrossel, os slides secundários usam IntersectionObserver para carregar sua imagem quando entram no viewport nas versões images e combined. O primeiro slide carrega imediatamente.
 
 Produto principal: eager em todas as versões. As imagens da Home, catálogo e miniaturas participam do tratamento, inclusive as visíveis inicialmente; isso pode afetar o LCP. Width/height e decoding=async são iguais. Imagens SVG 800×800 foram escolhidas como fixtures originais, sem conteúdo externo; seu baixo peso limita a validade externa do experimento de rede. O hero usa o mesmo CSS em todos os grupos e pode ser candidato a LCP: registre o elemento efetivamente medido.
 
