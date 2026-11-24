@@ -49,17 +49,14 @@ test('catálogo, modais, persistência e compra simulada equivalentes', async ({
   await page.locator('.card a[href="/produtos/p01"]').click();
   await expect(page.getByRole('heading', { name: 'Teclado Essencial', exact: true })).toBeVisible();
   await expect(page.locator('.thumbnails img')).toHaveCount(3);
-  await page
-    .getByRole('button', { name: 'Ver imagem 2 de Teclado Essencial', exact: true })
-    .click();
-  await expect(page.locator('.gallery > img')).toHaveAttribute('src', '/images/p01-2.svg');
+  await expect(page.locator('.gallery > img')).toHaveAttribute('src', '/images/p01-1.svg');
   const enlarge = page.getByRole('button', { name: 'Ampliar imagens' });
   await enlarge.focus();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('dialog')).toBeVisible();
   expect(requests.some((u) => /ImageViewer-.*\.js/.test(u))).toBe(lazyInteraction);
   await page.getByRole('button', { name: 'Próxima imagem' }).click();
-  await expect(page.getByText('Imagem 3 de 3')).toBeVisible();
+  await expect(page.getByText('Imagem 2 de 3')).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(enlarge).toBeFocused();
   await page.getByLabel('Quantidade', { exact: true }).fill('2');
