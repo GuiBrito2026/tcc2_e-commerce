@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --mode images",
-    "build": "tsc --noEmit && vite build --mode images",
+    "dev": "vite --mode routes",
+    "build": "tsc --noEmit && vite build --mode routes",
     "build:all": "tsc --noEmit && node scripts/build.mjs",
-    "preview": "vite preview --mode images --host 127.0.0.1",
+    "preview": "vite preview --mode routes --host 127.0.0.1",
     "test": "node scripts/verify.mjs",
     "test:e2e": "playwright test",
     "format": "prettier . --write",
