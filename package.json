@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --mode baseline",
-    "build": "npm run build:baseline",
+    "dev": "vite --mode images",
+    "build": "tsc --noEmit && vite build --mode images",
     "build:all": "tsc --noEmit && node scripts/build.mjs",
-    "preview": "vite preview --mode baseline --host 127.0.0.1",
+    "preview": "vite preview --mode images --host 127.0.0.1",
     "test": "node scripts/verify.mjs",
     "test:e2e": "playwright test",
     "format": "prettier . --write",
