@@ -60,7 +60,7 @@ export default function ProductCarousel() {
           >
             <Link className="carousel-product" to={`/produtos/${product.id}`}>
               <div className="carousel-image">
-                <ProductImage product={product} primary />
+                <ProductImage product={product} primary observeVisibility={position !== 0} />
               </div>
               <div className="carousel-copy">
                 <span className="eyebrow">{product.category}</span>
