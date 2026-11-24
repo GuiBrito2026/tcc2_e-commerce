@@ -1,8 +1,8 @@
 # Conecta — e-commerce experimental
 
-## Branch code-splitting
+## Branch carregamento_por_interacao
 
-O modo `routes` divide o JavaScript por página com `React.lazy` e `Suspense`. Home, catálogo, detalhes, carrinho e checkout são carregados ao acessar as respectivas rotas. As imagens carregam imediatamente e os modais usam importações estáticas. Execute `npm run build` e publique `dist/routes/`.
+O modo `interaction` mantém as páginas e as imagens com o carregamento da baseline. O comparador de produtos e o visualizador de imagens usam importações dinâmicas. O navegador solicita cada módulo quando o usuário abre a funcionalidade pela primeira vez. Execute `npm run build` e publique `dist/interaction/`.
 
 Protótipo acadêmico para avaliar carregamento sob demanda. React, TypeScript, Vite e React Router, sem backend ou serviços externos. Base compartilhada por cinco builds.
 
@@ -16,7 +16,7 @@ npm run build
 npm run preview -- --port 4173 --strictPort
 ```
 
-Abra http://127.0.0.1:4173. O preview usa routes por padrão. Para gerar todas as versões: `npm run build:all`. Para servir outra: `npm run preview -- --mode combined --port 4173 --strictPort`. Cada saída deve ser servida na raiz da origem, com fallback SPA para index.html. `npm run dev` é apenas desenvolvimento, nunca coleta experimental.
+Abra http://127.0.0.1:4173. O preview usa interaction por padrão. Para gerar todas as versões: `npm run build:all`. Para servir outra: `npm run preview -- --mode combined --port 4173 --strictPort`. Cada saída deve ser servida na raiz da origem, com fallback SPA para index.html. `npm run dev` é apenas desenvolvimento, nunca coleta experimental.
 
 ## Funcionalidades
 
