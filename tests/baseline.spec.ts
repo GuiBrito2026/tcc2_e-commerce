@@ -1,5 +1,22 @@
 import { test, expect } from '@playwright/test';
 
+test('carrossel adia imagens dos slides secundários no tratamento de imagens', async ({
+  page,
+}, info) => {
+  const lazyImages = ['images', 'combined'].includes(info.project.name);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  const slides = page.locator('.carousel-slides img');
+  await expect(slides.first()).toHaveAttribute('src', /\.svg$/);
+  if (lazyImages) {
+    expect(await slides.nth(1).getAttribute('src')).toBeNull();
+  } else {
+    await expect(slides.nth(1)).toHaveAttribute('src', /\.svg$/);
+  }
+  await page.getByRole('button', { name: 'Próximo produto' }).click();
+  await expect(slides.nth(1)).toHaveAttribute('src', /\.svg$/);
+});
+
 test('catálogo, modais, persistência e compra simulada equivalentes', async ({
   page,
   baseURL,

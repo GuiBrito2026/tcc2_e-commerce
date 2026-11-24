@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --mode interaction",
-    "build": "tsc --noEmit && vite build --mode interaction",
+    "dev": "vite --mode combined",
+    "build": "tsc --noEmit && vite build --mode combined",
     "build:all": "tsc --noEmit && node scripts/build.mjs",
-    "preview": "vite preview --mode interaction --host 127.0.0.1",
+    "preview": "vite preview --mode combined --host 127.0.0.1",
     "test": "node scripts/verify.mjs",
     "test:e2e": "playwright test",
     "format": "prettier . --write",
