@@ -10,7 +10,8 @@
     "test": "node scripts/verify.mjs",
     "test:e2e": "playwright test",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "build:baseline": "tsc --noEmit && vite build --mode baseline"
   },
   "dependencies": {
     "react": "19.1.0",
