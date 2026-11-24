@@ -1,8 +1,16 @@
 # Conecta — e-commerce experimental
 
-## Branch carregamento_por_interacao
+## Branch combinado
 
-O modo `interaction` mantém as páginas e as imagens com o carregamento da baseline. O comparador de produtos e o visualizador de imagens usam importações dinâmicas. O navegador solicita cada módulo quando o usuário abre a funcionalidade pela primeira vez. Execute `npm run build` e publique `dist/interaction/`.
+O modo `combined` aplica as três técnicas ao mesmo catálogo da baseline.
+
+| Técnica | Diferença em relação à baseline | Como verificar |
+| --- | --- | --- |
+| Imagens | As imagens secundárias do catálogo usam carregamento nativo sob demanda. No carrossel, o primeiro slide carrega imediatamente e o IntersectionObserver atribui o src aos slides secundários quando aparecem. | Em Elements, inspecione o atributo loading dos cards e o src do segundo slide antes e depois de avançar. |
+| Rotas | Home, catálogo, detalhes, carrinho e checkout têm módulos próprios carregados com React.lazy. | Em Network, abra a Home e navegue até o carrinho para observar a primeira requisição do módulo Cart. |
+| Interações | O comparador de produtos e o visualizador de imagens são importados ao abrir cada funcionalidade. | Em Network, acompanhe os módulos Compare e ImageViewer ao abrir cada modal pela primeira vez. |
+
+Para repetir a verificação, abra a aba Network, desative o cache e recarregue a página. O manifesto em `dist/combined/.vite/manifest.json` identifica cinco páginas e dois modais como entradas dinâmicas. Para hospedar, use `npm run build` e publique `dist/combined/`.
 
 Protótipo acadêmico para avaliar carregamento sob demanda. React, TypeScript, Vite e React Router, sem backend ou serviços externos. Base compartilhada por cinco builds.
 
@@ -16,7 +24,7 @@ npm run build
 npm run preview -- --port 4173 --strictPort
 ```
 
-Abra http://127.0.0.1:4173. O preview usa interaction por padrão. Para gerar todas as versões: `npm run build:all`. Para servir outra: `npm run preview -- --mode combined --port 4173 --strictPort`. Cada saída deve ser servida na raiz da origem, com fallback SPA para index.html. `npm run dev` é apenas desenvolvimento, nunca coleta experimental.
+Abra http://127.0.0.1:4173. O preview usa combined por padrão. Para gerar todas as versões: `npm run build:all`. Para servir outra: `npm run preview -- --mode baseline --port 4173 --strictPort`. Cada saída deve ser servida na raiz da origem, com fallback SPA para index.html. `npm run dev` é apenas desenvolvimento, nunca coleta experimental.
 
 ## Funcionalidades
 
@@ -41,7 +49,7 @@ Carrinho persistido em `localStorage`, chave `conecta.cart.v1`, apenas IDs e qua
 | interaction | eager                          | estáticas  | React.lazy ao abrir |
 | combined    | lazy nativo                    | React.lazy | React.lazy ao abrir |
 
-A imagem principal dos detalhes e o visualizador aberto são eager em todas as versões. Os modais são montados após clique em todos os grupos; somente os imports mudam. CSS, dados, imagens e funcionalidades são compartilhados. A baseline não seleciona módulos com import() ou React.lazy. Não há prefetch, preload manual, service worker ou dependências adicionadas para produzir lentidão.
+A imagem principal dos detalhes, o primeiro slide do carrossel e o visualizador aberto são eager em todas as versões. Os slides secundários usam IntersectionObserver nas versões images e combined. Os modais são montados após clique em todos os grupos; somente os imports mudam. CSS, dados, imagens e funcionalidades são compartilhados. A baseline não seleciona módulos com import() ou React.lazy. Não há prefetch, preload manual, service worker ou dependências adicionadas para produzir lentidão.
 
 ## Arquivos e verificações
 
