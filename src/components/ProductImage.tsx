@@ -10,8 +10,8 @@ export default function ProductImage({
     <img
       src={product.image}
       alt={product.name}
-      width="800"
-      height="800"
+      width={800}
+      height={800}
       loading={!primary && __LAZY_IMAGES__ ? 'lazy' : 'eager'}
       decoding="async"
     />

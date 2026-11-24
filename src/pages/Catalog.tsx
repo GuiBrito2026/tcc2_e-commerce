@@ -1,11 +1,14 @@
 import { Suspense, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { products, money } from '../data/catalog';
-import ProductImage from '../components/ProductImage';
+import { useSearchParams } from 'react-router-dom';
+import { products } from '../data/catalog';
+import ProductCard from '../components/ProductCard';
 import { Compare } from '@interactions';
 export default function Catalog() {
+  const [params, setParams] = useSearchParams();
+  const categories = [...new Set(products.map((p) => p.category))];
+  const requested = params.get('categoria') || 'Todos';
+  const category = categories.includes(requested) ? requested : 'Todos';
   const [query, setQuery] = useState('');
-  const [category, setCategory] = useState('Todos');
   const [sort, setSort] = useState('default');
   const [compare, setCompare] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
@@ -13,96 +16,69 @@ export default function Catalog() {
     .filter(
       (p) =>
         (category === 'Todos' || p.category === category) &&
-        p.name.toLocaleLowerCase('pt-BR').includes(query.toLocaleLowerCase('pt-BR')),
+        p.name.toLocaleLowerCase('pt-BR').includes(query.trim().toLocaleLowerCase('pt-BR')),
     )
     .sort((a, b) => (sort === 'asc' ? a.price - b.price : sort === 'desc' ? b.price - a.price : 0));
   return (
-    <main>
-      <section className="hero">
-        <div>
-          <span className="eyebrow">COLEÇÃO ESSENCIAL / 2026</span>
-          <h1>
-            Menos excessos.
-            <br />
-            Mais significado.
-          </h1>
-          <p>Texturas, formas e pequenos detalhes que transformam a sua casa.</p>
-          <a className="button" href="#colecao">
-            Explorar coleção ↓
-          </a>
-        </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="vase" />
-          <div className="orb" />
-          <span>Feito para o seu cotidiano.</span>
-        </div>
-      </section>
-      <section id="colecao">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">ESCOLHAS QUE FICAM</span>
-            <h2>Nossa coleção</h2>
-          </div>
-          <span>{visible.length} produtos</span>
-        </div>
-        <div className="filters">
-          <label>
-            Buscar produto
-            <input
-              placeholder="O que você procura?"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </label>
-          <label>
-            Categoria
-            <select value={category} onChange={(e) => setCategory(e.target.value)}>
-              {['Todos', ...new Set(products.map((p) => p.category))].map((c) => (
-                <option key={c}>{c}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Ordenar
-            <select value={sort} onChange={(e) => setSort(e.target.value)}>
-              <option value="default">Destaques</option>
-              <option value="asc">Menor preço</option>
-              <option value="desc">Maior preço</option>
-            </select>
-          </label>
-          <button disabled={selected.length < 2} onClick={() => setCompare(true)}>
-            Comparar ({selected.length}/3)
-          </button>
-        </div>
-        <div className="grid">
-          {visible.map((p) => (
-            <article className="card" key={p.id}>
-              <Link to={`/produto/${p.id}`}>
-                <ProductImage product={p} />
-                <div className="card-copy">
-                  <small>{p.category}</small>
-                  <h3>{p.name}</h3>
-                  <strong>{money(p.price)}</strong>
-                </div>
-              </Link>
-              <label className="check">
-                <input
-                  type="checkbox"
-                  checked={selected.includes(p.id)}
-                  disabled={selected.length >= 3 && !selected.includes(p.id)}
-                  onChange={(e) =>
-                    setSelected((old) =>
-                      e.target.checked ? [...old, p.id] : old.filter((id) => id !== p.id),
-                    )
-                  }
-                />
-                Comparar produto
-              </label>
-            </article>
-          ))}
-        </div>
-        {visible.length === 0 && <p role="status">Nenhum produto encontrado.</p>}
-      </section>
+    <main id="conteudo" tabIndex={-1}>
+      <span className="eyebrow">TECNOLOGIA PARA O COTIDIANO</span>
+      <h1>Todos os produtos</h1>
+      <p role="status">{visible.length} produtos encontrados</p>
+      <div className="filters">
+        <label>
+          Buscar produto
+          <input
+            placeholder="O que você procura?"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </label>
+        <label>
+          Categoria
+          <select
+            value={category}
+            onChange={(e) =>
+              setParams(e.target.value === 'Todos' ? {} : { categoria: e.target.value })
+            }
+          >
+            {['Todos', ...categories].map((c) => (
+              <option key={c}>{c}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Ordenar
+          <select value={sort} onChange={(e) => setSort(e.target.value)}>
+            <option value="default">Destaques</option>
+            <option value="asc">Menor preço</option>
+            <option value="desc">Maior preço</option>
+          </select>
+        </label>
+        <button disabled={selected.length < 2} onClick={() => setCompare(true)}>
+          Comparar ({selected.length}/3)
+        </button>
+      </div>
+      <div className="grid">
+        {visible.map((p) => (
+          <ProductCard key={p.id} product={p}>
+            <label className="check">
+              <input
+                aria-label={`Comparar ${p.name}`}
+                type="checkbox"
+                checked={selected.includes(p.id)}
+                disabled={selected.length >= 3 && !selected.includes(p.id)}
+                onChange={(e) =>
+                  setSelected((old) =>
+                    e.target.checked ? [...old, p.id] : old.filter((id) => id !== p.id),
+                  )
+                }
+              />
+              Comparar produto
+            </label>
+          </ProductCard>
+        ))}
+      </div>
+      {visible.length === 0 && <p>Nenhum produto encontrado. Tente outra busca ou categoria.</p>}
       {compare && (
         <Suspense fallback={<p role="status">Carregando comparação…</p>}>
           <Compare ids={selected} onClose={() => setCompare(false)} />

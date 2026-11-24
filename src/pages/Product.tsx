@@ -18,8 +18,8 @@ function Details({ p }: { p: ProductData }) {
           <img
             src={p.images[image].src}
             alt={p.images[image].alt}
-            width="800"
-            height="800"
+            width={800}
+            height={800}
             loading="eager"
           />
           <div className="thumbnails">
@@ -34,8 +34,8 @@ function Details({ p }: { p: ProductData }) {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  width="800"
-                  height="800"
+                  width={800}
+                  height={800}
                   loading={__LAZY_IMAGES__ ? 'lazy' : 'eager'}
                 />
               </button>
