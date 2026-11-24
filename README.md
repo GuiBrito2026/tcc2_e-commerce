@@ -1,8 +1,8 @@
 # Conecta — e-commerce experimental
 
-## Branch lazy_loading
+## Branch code-splitting
 
-Nesta branch, `dev`, `build` e `preview` usam o modo de imagens. Execute `npm run build` e publique `dist/images/`. A imagem inicial do carrossel carrega imediatamente. Os slides secundários usam IntersectionObserver, e os produtos secundários do catálogo usam carregamento nativo sob demanda. Rotas e modais são importados estaticamente.
+O modo `routes` divide o JavaScript por página com `React.lazy` e `Suspense`. Home, catálogo, detalhes, carrinho e checkout são carregados ao acessar as respectivas rotas. As imagens carregam imediatamente e os modais usam importações estáticas. Execute `npm run build` e publique `dist/routes/`.
 
 Protótipo acadêmico para avaliar carregamento sob demanda. React, TypeScript, Vite e React Router, sem backend ou serviços externos. Base compartilhada por cinco builds.
 
@@ -16,7 +16,7 @@ npm run build
 npm run preview -- --port 4173 --strictPort
 ```
 
-Abra http://127.0.0.1:4173. O preview usa images por padrão. Para gerar todas as versões: `npm run build:all`. Para servir outra: `npm run preview -- --mode combined --port 4173 --strictPort`. Cada saída deve ser servida na raiz da origem, com fallback SPA para index.html. `npm run dev` é apenas desenvolvimento, nunca coleta experimental.
+Abra http://127.0.0.1:4173. O preview usa routes por padrão. Para gerar todas as versões: `npm run build:all`. Para servir outra: `npm run preview -- --mode combined --port 4173 --strictPort`. Cada saída deve ser servida na raiz da origem, com fallback SPA para index.html. `npm run dev` é apenas desenvolvimento, nunca coleta experimental.
 
 ## Funcionalidades
 
@@ -41,7 +41,7 @@ Carrinho persistido em `localStorage`, chave `conecta.cart.v1`, apenas IDs e qua
 | interaction | eager                          | estáticas  | React.lazy ao abrir |
 | combined    | lazy nativo                    | React.lazy | React.lazy ao abrir |
 
-A imagem principal dos detalhes, o primeiro slide do carrossel e o visualizador aberto são eager em todas as versões. Os slides secundários usam IntersectionObserver nas versões images e combined. Os modais são montados após clique em todos os grupos; somente os imports mudam. CSS, dados, imagens e funcionalidades são compartilhados. A baseline não seleciona módulos com import() ou React.lazy. Não há prefetch, preload manual, service worker ou dependências adicionadas para produzir lentidão.
+A imagem principal dos detalhes e o visualizador aberto são eager em todas as versões. Os modais são montados após clique em todos os grupos; somente os imports mudam. CSS, dados, imagens e funcionalidades são compartilhados. A baseline não seleciona módulos com import() ou React.lazy. Não há prefetch, preload manual, service worker ou dependências adicionadas para produzir lentidão.
 
 ## Arquivos e verificações
 
