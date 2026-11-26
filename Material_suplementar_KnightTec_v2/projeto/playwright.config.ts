@@ -1,0 +1,16 @@
+import { defineConfig } from '@playwright/test';
+const modes = ['baseline', 'images', 'routes', 'interaction', 'combined'];
+export default defineConfig({
+  testDir: 'tests',
+  workers: 1,
+  use: {
+    viewport: { width: 1365, height: 900 },
+    channel: process.env.PLAYWRIGHT_CHANNEL === 'chrome' ? 'chrome' : undefined,
+  },
+  projects: modes.map((name, i) => ({ name, use: { baseURL: `http://127.0.0.1:${4173 + i}` } })),
+  webServer: modes.map((mode, i) => ({
+    command: `node node_modules/vite/bin/vite.js preview --mode ${mode} --port ${4173 + i} --strictPort`,
+    url: `http://127.0.0.1:${4173 + i}`,
+    reuseExistingServer: false,
+  })),
+});

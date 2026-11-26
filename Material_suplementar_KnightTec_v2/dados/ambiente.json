@@ -1,0 +1,40 @@
+{
+  "platform": "Windows 11 Home Single Language",
+  "cpu": "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz",
+  "ram": 8299851776,
+  "node": "v22.16.0",
+  "profiles": [
+    {
+      "id": "desktop",
+      "preset": "desktop",
+      "method": "provided"
+    },
+    {
+      "id": "mobile4g",
+      "preset": "default",
+      "method": "simulate",
+      "throttle": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    {
+      "id": "mobile3g",
+      "preset": "default",
+      "method": "simulate",
+      "throttle": {
+        "rttMs": 400,
+        "throughputKbps": 400,
+        "cpuSlowdownMultiplier": 6
+      }
+    }
+  ],
+  "fingerprint": {
+    "baseline": "38306d0abe0bed00491a38ebe55c2784639ffb8d4b9ffacae9827803a398d0df",
+    "images": "d0c72fddc3d87f6a0ca68816b2c6aa8a015c72813a700103db54ced309dea5d9",
+    "routes": "ef1f8e8030de2457ce4fa4b0d808de11773883852cd1bbd4dd678213a4640cfd",
+    "interaction": "ad5c915c0d2fc46c77a7548aafb4bdeacc8986e674b17aaf93729bba0a17f1af",
+    "combined": "59d511fd766c58cbb3ad6b7706181a82fabe0cd60875705cab59097f8b254f4c"
+  }
+}
