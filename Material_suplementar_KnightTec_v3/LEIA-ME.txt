@@ -1,0 +1,11 @@
+Material suplementar v3 | Knight-tec
+Código de referência: 26406a2884e8f79ce7679129117798d5cd765779 (combinado). As cinco saídas de produção estão incluídas. As entradas JS foram confrontadas com ambiente.json. Os hashes dos demais arquivos foram gerados na revisão. O coletor original não registrou o commit.
+Para conferir a análise, usar Python 3.13.3 e instalar as dependências na raiz extraída:
+python -m pip install -r requirements.txt
+python analisar.py dados resultados-recalculados
+
+A validação cruza configSettings com o perfil previsto (método, rede, CPU, formFactor e emulação de tela), confere URL final, runtimeError, chaves únicas e valores finitos da nota e das cinco métricas. Em Desktop, provided mantém rede e CPU sem limitação pelo Lighthouse. Nos móveis, simulate utiliza RTT, vazão e multiplicador de CPU. Os campos adicionais de rede são conferidos como parte da configuração registrada.
+
+Saídas: execucoes.csv, estatisticas.csv, figura9.png (Figura 6 do TCC) e figura10.png (Figura 7). Os quadros, as tabelas do piloto e as demais figuras foram organizados no documento a partir da literatura, das configurações, das capturas ou da consolidação de builds e requisições. O script não refaz a coleta nem gera a monografia.
+Para replicar a coleta: na pasta projeto, executar npm ci e npm run build:all. Abrir cinco terminais no projeto e executar npx vite preview --mode MODO --port PORTA --strictPort, substituindo os pares indicados no manifesto. Executar npm ci --prefix ferramentas, depois node ferramentas/coleta.mjs resultados-replica. É necessário Google Chrome instalado.
+Cada linha em resultados/execucoes.csv identifica rodada, horário UTC, tratamento e perfil. estatisticas.csv contém as medianas das duas análises e os indicadores de dispersão da série principal. Os arquivos brutos permanecem em dados/.

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf9f6" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          if (localStorage.getItem('conecta.theme') === 'dark') theme = 'dark';
+        } catch {}
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content =
+          theme === 'dark' ? '#181817' : '#faf9f6';
+      })();
+    </script>
+    <link rel="icon" type="image/png" sizes="64x64" href="/knight-tec-favicon.png" />
+    <title>knight-tec — acessórios de informática</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
